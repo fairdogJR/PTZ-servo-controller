@@ -1,0 +1,10 @@
+C:\Users\fairfiel.KEYSIGHT\source\repos\ptz controller\bin\Debug\ptz controller.exe.config
+C:\Users\fairfiel.KEYSIGHT\source\repos\ptz controller\bin\Debug\ptz controller.exe
+C:\Users\fairfiel.KEYSIGHT\source\repos\ptz controller\bin\Debug\ptz controller.pdb
+C:\Users\fairfiel.KEYSIGHT\source\repos\ptz controller\obj\Debug\ptz controller.csprojAssemblyReference.cache
+C:\Users\fairfiel.KEYSIGHT\source\repos\ptz controller\obj\Debug\ptz_controller.Form1.resources
+C:\Users\fairfiel.KEYSIGHT\source\repos\ptz controller\obj\Debug\ptz_controller.Properties.Resources.resources
+C:\Users\fairfiel.KEYSIGHT\source\repos\ptz controller\obj\Debug\ptz controller.csproj.GenerateResource.cache
+C:\Users\fairfiel.KEYSIGHT\source\repos\ptz controller\obj\Debug\ptz controller.csproj.CoreCompileInputs.cache
+C:\Users\fairfiel.KEYSIGHT\source\repos\ptz controller\obj\Debug\ptz controller.exe
+C:\Users\fairfiel.KEYSIGHT\source\repos\ptz controller\obj\Debug\ptz controller.pdb
