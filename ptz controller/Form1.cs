@@ -29,7 +29,14 @@ using System.Runtime.Serialization.Formatters;
 //essentially just got the actual location and store the old value and compare 
 //I do see a larger offset then just 1 but I dont care as much
 // compare old vs new if it is same do nothing , bigger move one way, smaller mover the other
-
+//
+//Issue with servos moving on startup (not really desired) this is discussed in this article
+//there is no easy solution with a servo when there is no position feedback availble to the arduino
+// if it was not at reset poition when shutting down its going to move
+//pointed out in this article if you have a load attached and the server moves quickly , this can be an issue
+//
+//https://forum.arduino.cc/index.php?topic=65855.0
+//9600 baud seems more stable
 
 
 namespace ptz_controller
@@ -44,7 +51,11 @@ namespace ptz_controller
         int _scaledDelta = 0;
         int oldxvalue = 0;
         int newxvalue = 0;
-        int difference = 0;
+        int differencex = 0;
+        int differencey = 0;
+        int newyvalue = 0;
+        int oldyvalue = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -60,11 +71,11 @@ namespace ptz_controller
             _scaledDelta = e.Delta / 120;
             TotalDeltaLabel.Text = _scaledDelta.ToString();
             if (_scaledDelta>0)
-                    { port.Write("w");
+                    { port.Write("t");
             }
             if (_scaledDelta < 0)
             {
-                port.Write("s");
+                port.Write("g");
             }
  
             Console.WriteLine(port.BytesToWrite);
@@ -150,24 +161,49 @@ namespace ptz_controller
         {
             //Console.WriteLine( e.Location);
             newxvalue = e.Location.X;
-            difference = newxvalue - oldxvalue;
-            Console.WriteLine(difference);
+            differencex = newxvalue - oldxvalue;
+            Console.WriteLine(differencex);
             oldxvalue = newxvalue;
+
+            newyvalue = e.Location.Y;
+            differencey = newyvalue - oldyvalue;
+            Console.WriteLine(differencey);
+            oldyvalue = newyvalue;
 
             if (port.IsOpen)
             {
 
-                if (difference > 0)
+                if (differencex > 0)
                 {
                     port.Write("a");
                 }
-                if (difference < 0)
+                if (differencex < 0)
                 {
                     port.Write("d");
                 }
+
+                if (differencey > 0)
+                {
+                    port.Write("w");
+                }
+                if (differencey < 0)
+                {
+                    port.Write("s");
+                }
+
                 Flush_Reads();
             }
            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
