@@ -37,6 +37,7 @@
             this.Up = new System.Windows.Forms.Button();
             this.down = new System.Windows.Forms.Button();
             this.rcvbuf = new System.Windows.Forms.Label();
+            this.right_position = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -78,6 +79,7 @@
             this.button4.Text = "rotate right";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             // 
             // DeltaLabel
             // 
@@ -128,11 +130,22 @@
             this.rcvbuf.Text = "rcvbuf";
             this.rcvbuf.Click += new System.EventHandler(this.rcvbuf_Click);
             // 
+            // right_position
+            // 
+            this.right_position.AutoSize = true;
+            this.right_position.Location = new System.Drawing.Point(758, 385);
+            this.right_position.Name = "right_position";
+            this.right_position.Size = new System.Drawing.Size(104, 20);
+            this.right_position.TabIndex = 10;
+            this.right_position.Text = "right_position";
+            this.right_position.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 762);
+            this.Controls.Add(this.right_position);
             this.Controls.Add(this.rcvbuf);
             this.Controls.Add(this.down);
             this.Controls.Add(this.Up);
@@ -144,6 +157,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -161,6 +175,7 @@
         private System.Windows.Forms.Button Up;
         private System.Windows.Forms.Button down;
         private System.Windows.Forms.Label rcvbuf;
+        private System.Windows.Forms.Label right_position;
     }
 }
 
