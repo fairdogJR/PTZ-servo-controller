@@ -1,16 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+//using System.Collections.Generic;
+//using System.ComponentModel;
+//using System.Data;
+//using System.Drawing;
+//using System.Linq;
 using System.Text;
 //using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.IO.Ports;
-using System.Reflection;
-using System.Runtime.Serialization.Formatters;
+//using System.Reflection;
+//using System.Runtime.Serialization.Formatters;
 
 //references  and Todo
 //serial port access
@@ -37,12 +37,16 @@ using System.Runtime.Serialization.Formatters;
 //
 //https://forum.arduino.cc/index.php?topic=65855.0
 //9600 baud seems more stable
+//turns out decoupling was not strong enough. i added to both the power at each motor ribbon connect 100uF and 400Uf on one and also small cap on data line as it was noisy
+//reading data back from the serial can be tricky (I want to read the final positions from the arduino, this is a serial stream. I sdont need all the data just be able to read and maybe stor a position when learning a position
+//https://stackoverflow.com/questions/44378327/read-all-buffer-data-from-serial-port-with-c-sharp
 
 
 namespace ptz_controller
 {
     public partial class Form1 : Form
     {
+
         // Instantiate the communications
         // port with some basic settings
         SerialPort port = new SerialPort(
@@ -77,28 +81,41 @@ namespace ptz_controller
             {
                 port.Write("g");
             }
- 
-            Console.WriteLine(port.BytesToWrite);
-            Console.WriteLine(port.BytesToRead);
-            int count = port.BytesToRead;
-            byte[] data = new byte[count];
-            rcvbuf.Text=(port.Read(data, 0, data.Length)).ToString();
 
-            Console.WriteLine(port.BytesToRead);
-            Console.WriteLine(" ");
+            Flush_Reads();
         }
 
         private void Flush_Reads ()
         {
-            //Required or read buffer fills and nothing else CancelButton happen
-            Console.WriteLine(port.BytesToWrite);
-            Console.WriteLine(port.BytesToRead);
-            int count = port.BytesToRead;
-            byte[] data = new byte[count];
-            rcvbuf.Text = (port.Read(data, 0, data.Length)).ToString();
+            //Required for getting data feedback from Arduino on servo present positions
+            //this may get more sets of data than expected but the last data position will be caught
+            //this can be used when learning favorite axis positions and setting as presets
+            int bytestoread = 0;
+            try
+            {
+                bytestoread = port.BytesToRead;
+            }
 
-            Console.WriteLine(port.BytesToRead);
-            Console.WriteLine(" ");
+            catch (InvalidOperationException ex)
+            {
+//good luck
+            }
+
+            if (port.IsOpen)
+            {
+                if (bytestoread != 0)
+                {
+
+                    byte[] temp = new byte[bytestoread];
+
+                    if (port.IsOpen)
+                        port.Read(temp, 0, bytestoread);
+
+                    rcvbuf.Text = (Encoding.Default.GetString(temp));
+
+                }
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -119,11 +136,13 @@ namespace ptz_controller
             // Write a string
             //not working sn
             port.Write("q");
+            Flush_Reads();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             port.Write("e");
+            Flush_Reads();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -140,11 +159,13 @@ namespace ptz_controller
         private void Up_Click(object sender, EventArgs e)
         {
             port.Write("w");
+            Flush_Reads();
         }
 
         private void down_Click(object sender, EventArgs e)
         {
             port.Write("s");
+            Flush_Reads();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -162,12 +183,12 @@ namespace ptz_controller
             //Console.WriteLine( e.Location);
             newxvalue = e.Location.X;
             differencex = newxvalue - oldxvalue;
-            Console.WriteLine(differencex);
+            //Console.WriteLine(differencex);
             oldxvalue = newxvalue;
 
             newyvalue = e.Location.Y;
             differencey = newyvalue - oldyvalue;
-            Console.WriteLine(differencey);
+           // Console.WriteLine(differencey);
             oldyvalue = newyvalue;
 
             if (port.IsOpen)
@@ -190,7 +211,7 @@ namespace ptz_controller
                 {
                     port.Write("s");
                 }
-
+                x_position.Text = newxvalue.ToString();
                 Flush_Reads();
             }
            
@@ -204,6 +225,36 @@ namespace ptz_controller
         private void label1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void fave1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fave2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void store1_Click(object sender, EventArgs e)
+        {
+            fave1.Text = rcvbuf.Text;
+        }
+
+        private void store2_Click(object sender, EventArgs e)
+        {
+            fave2.Text = rcvbuf.Text;
+        }
+
+        private void store3_Click(object sender, EventArgs e)
+        {
+            fave3.Text = rcvbuf.Text;
+        }
+
+        private void store4_Click(object sender, EventArgs e)
+        {
+            fave4.Text = rcvbuf.Text;
         }
     }
 }
