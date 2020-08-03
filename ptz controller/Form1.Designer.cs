@@ -55,14 +55,33 @@
             this.portinfo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.setmotorpositions = new System.Windows.Forms.Button();
+            this.preset1 = new System.Windows.Forms.Button();
+            this.preset2 = new System.Windows.Forms.Button();
+            this.preset4 = new System.Windows.Forms.Button();
+            this.preset3 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.upfaster = new System.Windows.Forms.Button();
+            this.downfaster = new System.Windows.Forms.Button();
+            this.rightfaster = new System.Windows.Forms.Button();
+            this.leftfaster = new System.Windows.Forms.Button();
+            this.right = new System.Windows.Forms.Button();
+            this.left = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.wristdownfaster = new System.Windows.Forms.Button();
+            this.wristupfaster = new System.Windows.Forms.Button();
+            this.wristdown = new System.Windows.Forms.Button();
+            this.wristup = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(408, 376);
+            this.button3.Location = new System.Drawing.Point(549, 46);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(109, 45);
             this.button3.TabIndex = 2;
@@ -72,7 +91,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(626, 376);
+            this.button4.Location = new System.Drawing.Point(664, 46);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(113, 44);
             this.button4.TabIndex = 3;
@@ -84,7 +103,7 @@
             // DeltaLabel
             // 
             this.DeltaLabel.AutoSize = true;
-            this.DeltaLabel.Location = new System.Drawing.Point(827, 332);
+            this.DeltaLabel.Location = new System.Drawing.Point(917, 251);
             this.DeltaLabel.Name = "DeltaLabel";
             this.DeltaLabel.Size = new System.Drawing.Size(86, 20);
             this.DeltaLabel.TabIndex = 5;
@@ -94,7 +113,7 @@
             // TotalDeltaLabel
             // 
             this.TotalDeltaLabel.AutoSize = true;
-            this.TotalDeltaLabel.Location = new System.Drawing.Point(827, 361);
+            this.TotalDeltaLabel.Location = new System.Drawing.Point(917, 280);
             this.TotalDeltaLabel.Name = "TotalDeltaLabel";
             this.TotalDeltaLabel.Size = new System.Drawing.Size(121, 20);
             this.TotalDeltaLabel.TabIndex = 6;
@@ -102,7 +121,7 @@
             // 
             // Up
             // 
-            this.Up.Location = new System.Drawing.Point(514, 287);
+            this.Up.Location = new System.Drawing.Point(193, 74);
             this.Up.Name = "Up";
             this.Up.Size = new System.Drawing.Size(112, 45);
             this.Up.TabIndex = 7;
@@ -112,7 +131,7 @@
             // 
             // down
             // 
-            this.down.Location = new System.Drawing.Point(514, 453);
+            this.down.Location = new System.Drawing.Point(193, 240);
             this.down.Name = "down";
             this.down.Size = new System.Drawing.Size(111, 49);
             this.down.TabIndex = 8;
@@ -133,7 +152,7 @@
             // x_position
             // 
             this.x_position.AutoSize = true;
-            this.x_position.Location = new System.Drawing.Point(758, 385);
+            this.x_position.Location = new System.Drawing.Point(923, 327);
             this.x_position.Name = "x_position";
             this.x_position.Size = new System.Drawing.Size(80, 20);
             this.x_position.TabIndex = 10;
@@ -340,32 +359,209 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Positions";
             // 
-            // setmotorpositions
+            // preset1
             // 
-            this.setmotorpositions.Location = new System.Drawing.Point(706, 88);
-            this.setmotorpositions.Name = "setmotorpositions";
-            this.setmotorpositions.Size = new System.Drawing.Size(176, 74);
-            this.setmotorpositions.TabIndex = 29;
-            this.setmotorpositions.Text = "test set motor pos";
-            this.setmotorpositions.UseVisualStyleBackColor = true;
-            this.setmotorpositions.Click += new System.EventHandler(this.setmotorpositions_Click);
+            this.preset1.Location = new System.Drawing.Point(268, 25);
+            this.preset1.Name = "preset1";
+            this.preset1.Size = new System.Drawing.Size(154, 36);
+            this.preset1.TabIndex = 29;
+            this.preset1.Text = "preset1";
+            this.preset1.UseVisualStyleBackColor = true;
+            this.preset1.Click += new System.EventHandler(this.preset1_Click);
+            // 
+            // preset2
+            // 
+            this.preset2.Location = new System.Drawing.Point(268, 66);
+            this.preset2.Name = "preset2";
+            this.preset2.Size = new System.Drawing.Size(154, 36);
+            this.preset2.TabIndex = 30;
+            this.preset2.Text = "preset2";
+            this.preset2.UseVisualStyleBackColor = true;
+            this.preset2.Click += new System.EventHandler(this.preset2_Click);
+            // 
+            // preset4
+            // 
+            this.preset4.Location = new System.Drawing.Point(268, 150);
+            this.preset4.Name = "preset4";
+            this.preset4.Size = new System.Drawing.Size(154, 36);
+            this.preset4.TabIndex = 32;
+            this.preset4.Text = "preset4";
+            this.preset4.UseVisualStyleBackColor = true;
+            this.preset4.Click += new System.EventHandler(this.preset4_Click);
+            // 
+            // preset3
+            // 
+            this.preset3.Location = new System.Drawing.Point(268, 108);
+            this.preset3.Name = "preset3";
+            this.preset3.Size = new System.Drawing.Size(154, 36);
+            this.preset3.TabIndex = 31;
+            this.preset3.Text = "preset3";
+            this.preset3.UseVisualStyleBackColor = true;
+            this.preset3.Click += new System.EventHandler(this.preset3_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox3.Controls.Add(this.preset4);
+            this.groupBox3.Controls.Add(this.preset3);
+            this.groupBox3.Controls.Add(this.preset2);
+            this.groupBox3.Controls.Add(this.preset1);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox3.Location = new System.Drawing.Point(540, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(491, 205);
+            this.groupBox3.TabIndex = 33;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Motor Positions";
+            // 
+            // upfaster
+            // 
+            this.upfaster.Location = new System.Drawing.Point(223, 13);
+            this.upfaster.Name = "upfaster";
+            this.upfaster.Size = new System.Drawing.Size(61, 55);
+            this.upfaster.TabIndex = 34;
+            this.upfaster.Text = "up faster";
+            this.upfaster.UseVisualStyleBackColor = true;
+            this.upfaster.Click += new System.EventHandler(this.upfaster_Click);
+            // 
+            // downfaster
+            // 
+            this.downfaster.Location = new System.Drawing.Point(223, 295);
+            this.downfaster.Name = "downfaster";
+            this.downfaster.Size = new System.Drawing.Size(60, 55);
+            this.downfaster.TabIndex = 35;
+            this.downfaster.Text = "down faster";
+            this.downfaster.UseVisualStyleBackColor = true;
+            this.downfaster.Click += new System.EventHandler(this.downfaster_Click);
+            // 
+            // rightfaster
+            // 
+            this.rightfaster.Location = new System.Drawing.Point(426, 149);
+            this.rightfaster.Name = "rightfaster";
+            this.rightfaster.Size = new System.Drawing.Size(60, 55);
+            this.rightfaster.TabIndex = 39;
+            this.rightfaster.Text = "right faster";
+            this.rightfaster.UseVisualStyleBackColor = true;
+            this.rightfaster.Click += new System.EventHandler(this.rightfaster_Click);
+            // 
+            // leftfaster
+            // 
+            this.leftfaster.Location = new System.Drawing.Point(9, 149);
+            this.leftfaster.Name = "leftfaster";
+            this.leftfaster.Size = new System.Drawing.Size(61, 55);
+            this.leftfaster.TabIndex = 38;
+            this.leftfaster.Text = "left faster";
+            this.leftfaster.UseVisualStyleBackColor = true;
+            this.leftfaster.Click += new System.EventHandler(this.leftfaster_Click);
+            // 
+            // right
+            // 
+            this.right.Location = new System.Drawing.Point(309, 152);
+            this.right.Name = "right";
+            this.right.Size = new System.Drawing.Size(111, 49);
+            this.right.TabIndex = 37;
+            this.right.Text = "right";
+            this.right.UseVisualStyleBackColor = true;
+            this.right.Click += new System.EventHandler(this.right_Click);
+            // 
+            // left
+            // 
+            this.left.Location = new System.Drawing.Point(76, 152);
+            this.left.Name = "left";
+            this.left.Size = new System.Drawing.Size(112, 45);
+            this.left.TabIndex = 36;
+            this.left.Text = "left";
+            this.left.UseVisualStyleBackColor = true;
+            this.left.Click += new System.EventHandler(this.left_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox4.Controls.Add(this.rightfaster);
+            this.groupBox4.Controls.Add(this.leftfaster);
+            this.groupBox4.Controls.Add(this.right);
+            this.groupBox4.Controls.Add(this.left);
+            this.groupBox4.Controls.Add(this.downfaster);
+            this.groupBox4.Controls.Add(this.upfaster);
+            this.groupBox4.Controls.Add(this.down);
+            this.groupBox4.Controls.Add(this.Up);
+            this.groupBox4.Location = new System.Drawing.Point(197, 251);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(492, 357);
+            this.groupBox4.TabIndex = 40;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "arm";
+            // 
+            // wristdownfaster
+            // 
+            this.wristdownfaster.Location = new System.Drawing.Point(41, 232);
+            this.wristdownfaster.Name = "wristdownfaster";
+            this.wristdownfaster.Size = new System.Drawing.Size(60, 55);
+            this.wristdownfaster.TabIndex = 43;
+            this.wristdownfaster.Text = "down faster";
+            this.wristdownfaster.UseVisualStyleBackColor = true;
+            this.wristdownfaster.Click += new System.EventHandler(this.wristdownfaster_Click);
+            // 
+            // wristupfaster
+            // 
+            this.wristupfaster.Location = new System.Drawing.Point(40, 47);
+            this.wristupfaster.Name = "wristupfaster";
+            this.wristupfaster.Size = new System.Drawing.Size(61, 55);
+            this.wristupfaster.TabIndex = 42;
+            this.wristupfaster.Text = "up faster";
+            this.wristupfaster.UseVisualStyleBackColor = true;
+            this.wristupfaster.Click += new System.EventHandler(this.wristupfaster_Click);
+            // 
+            // wristdown
+            // 
+            this.wristdown.Location = new System.Drawing.Point(11, 177);
+            this.wristdown.Name = "wristdown";
+            this.wristdown.Size = new System.Drawing.Size(111, 49);
+            this.wristdown.TabIndex = 41;
+            this.wristdown.Text = "down";
+            this.wristdown.UseVisualStyleBackColor = true;
+            this.wristdown.Click += new System.EventHandler(this.wristdown_Click);
+            // 
+            // wristup
+            // 
+            this.wristup.Location = new System.Drawing.Point(10, 108);
+            this.wristup.Name = "wristup";
+            this.wristup.Size = new System.Drawing.Size(112, 45);
+            this.wristup.TabIndex = 40;
+            this.wristup.Text = "up";
+            this.wristup.UseVisualStyleBackColor = true;
+            this.wristup.Click += new System.EventHandler(this.wristup_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox5.Controls.Add(this.wristdownfaster);
+            this.groupBox5.Controls.Add(this.wristupfaster);
+            this.groupBox5.Controls.Add(this.wristdown);
+            this.groupBox5.Controls.Add(this.wristup);
+            this.groupBox5.Location = new System.Drawing.Point(702, 264);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(147, 297);
+            this.groupBox5.TabIndex = 44;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "wrist";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 762);
-            this.Controls.Add(this.setmotorpositions);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.playseq1);
             this.Controls.Add(this.x_position);
-            this.Controls.Add(this.down);
-            this.Controls.Add(this.Up);
             this.Controls.Add(this.TotalDeltaLabel);
             this.Controls.Add(this.DeltaLabel);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
+            this.Controls.Add(this.groupBox3);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -374,6 +570,9 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,7 +606,23 @@
         private System.Windows.Forms.Label portinfo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button setmotorpositions;
+        private System.Windows.Forms.Button preset1;
+        private System.Windows.Forms.Button preset2;
+        private System.Windows.Forms.Button preset4;
+        private System.Windows.Forms.Button preset3;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button upfaster;
+        private System.Windows.Forms.Button downfaster;
+        private System.Windows.Forms.Button rightfaster;
+        private System.Windows.Forms.Button leftfaster;
+        private System.Windows.Forms.Button right;
+        private System.Windows.Forms.Button left;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button wristdownfaster;
+        private System.Windows.Forms.Button wristupfaster;
+        private System.Windows.Forms.Button wristdown;
+        private System.Windows.Forms.Button wristup;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }
 
