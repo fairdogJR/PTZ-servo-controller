@@ -185,41 +185,46 @@ namespace ptz_controller
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-            //Console.WriteLine( e.Location);
-            newxvalue = e.Location.X;
-            differencex = newxvalue - oldxvalue;
-            //Console.WriteLine(differencex);
-            oldxvalue = newxvalue;
-
-            newyvalue = e.Location.Y;
-            differencey = newyvalue - oldyvalue;
-           // Console.WriteLine(differencey);
-            oldyvalue = newyvalue;
-
-            if (port.IsOpen)
+            if (Control.ModifierKeys == Keys.Shift)
             {
 
-                if (differencex > 0)
+                //Console.WriteLine( e.Location);
+                newxvalue = e.Location.X;
+                differencex = newxvalue - oldxvalue;
+                //Console.WriteLine(differencex);
+                oldxvalue = newxvalue;
+
+                newyvalue = e.Location.Y;
+                differencey = newyvalue - oldyvalue;
+                // Console.WriteLine(differencey);
+                oldyvalue = newyvalue;
+
+                if (port.IsOpen)
                 {
-                    port.Write("a\n");
-                }
-                if (differencex < 0)
-                {
-                    port.Write("d\n");
+
+                    if (differencex > 0)
+                    {
+                        port.Write("a\n");
+                    }
+                    if (differencex < 0)
+                    {
+                        port.Write("d\n");
+                    }
+
+                    if (differencey > 0)
+                    {
+                        port.Write("w\n");
+                    }
+                    if (differencey < 0)
+                    {
+                        port.Write("s\n");
+                    }
+                    x_position.Text = newxvalue.ToString();
+                    Flush_Reads();
+
                 }
 
-                if (differencey > 0)
-                {
-                    port.Write("w\n");
-                }
-                if (differencey < 0)
-                {
-                    port.Write("s\n");
-                }
-                x_position.Text = newxvalue.ToString();
-                Flush_Reads();
             }
-           
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -273,10 +278,146 @@ namespace ptz_controller
             Flush_Reads(); //should rename this function later
         }
 
-        private void setmotorpositions_Click(object sender, EventArgs e)
+        private void preset1_Click(object sender, EventArgs e)
         {
             port.Write("set_motor_positions 117 45 107\n");
             Flush_Reads(); //should rename this function later
+        }
+
+        private void preset2_Click(object sender, EventArgs e)
+        {
+            port.Write("set_motor_positions 117 45 107\n");
+            Flush_Reads(); //should rename this function later
+        }
+
+        private void preset3_Click(object sender, EventArgs e)
+        {
+            port.Write("set_motor_positions 117 45 107\n");
+            Flush_Reads(); //should rename this function later
+        }
+
+        private void preset4_Click(object sender, EventArgs e)
+        {
+            port.Write("set_motor_positions 117 45 107\n");
+            Flush_Reads(); //should rename this function later
+        }
+
+        private void upfaster_Click(object sender, EventArgs e)
+        {
+            port.Write("s\n");
+            port.Write("s\n");
+            port.Write("s\n");
+            port.Write("s\n");
+            port.Write("s\n");
+            port.Write("s\n");
+            port.Write("s\n");
+            port.Write("s\n");
+            port.Write("s\n");
+            port.Write("s\n");
+
+            Flush_Reads();
+        }
+
+        private void downfaster_Click(object sender, EventArgs e)
+        {
+            port.Write("w\n");
+            port.Write("w\n");
+            port.Write("w\n");
+            port.Write("w\n");
+            port.Write("w\n");
+            port.Write("w\n");
+            port.Write("w\n");
+            port.Write("w\n");
+            port.Write("w\n");
+            port.Write("w\n");
+
+            Flush_Reads();
+        }
+
+        private void left_Click(object sender, EventArgs e)
+        {
+            port.Write("a\n");
+            Flush_Reads();
+        }
+
+        private void right_Click(object sender, EventArgs e)
+        {
+            port.Write("a\n");
+            Flush_Reads();
+        }
+
+        private void leftfaster_Click(object sender, EventArgs e)
+        {
+            port.Write("a\n");
+            port.Write("a\n");
+            port.Write("a\n");
+            port.Write("a\n");
+            port.Write("a\n");
+            port.Write("a\n");
+            port.Write("a\n");
+            port.Write("a\n");
+            port.Write("a\n");
+            port.Write("a\n");
+
+            Flush_Reads();
+        }
+
+        private void rightfaster_Click(object sender, EventArgs e)
+        {
+            port.Write("d\n");
+            port.Write("d\n");
+            port.Write("d\n");
+            port.Write("d\n");
+            port.Write("d\n");
+            port.Write("d\n");
+            port.Write("d\n");
+            port.Write("d\n");
+            port.Write("d\n");
+            port.Write("d\n");
+
+            Flush_Reads();
+        }
+
+        private void wristupfaster_Click(object sender, EventArgs e)
+        {
+            port.Write("t\n");
+            port.Write("t\n");
+            port.Write("t\n");
+            port.Write("t\n");
+            port.Write("t\n");
+            port.Write("t\n");
+            port.Write("t\n");
+            port.Write("t\n");
+            port.Write("t\n");
+            port.Write("t\n");
+            Flush_Reads();
+        }
+
+        private void wristup_Click(object sender, EventArgs e)
+        {
+            port.Write("t\n");
+            Flush_Reads();
+        }
+
+        private void wristdown_Click(object sender, EventArgs e)
+        {
+            port.Write("g\n");
+            Flush_Reads();
+        }
+
+        private void wristdownfaster_Click(object sender, EventArgs e)
+        {
+            port.Write("g\n");
+            port.Write("g\n");
+            port.Write("g\n");
+            port.Write("g\n");
+            port.Write("g\n");
+            port.Write("g\n");
+            port.Write("g\n");
+            port.Write("g\n");
+            port.Write("g\n");
+            port.Write("g\n");
+            Flush_Reads();
         }
     }
 }
