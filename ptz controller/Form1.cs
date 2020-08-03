@@ -44,13 +44,16 @@ using System.IO.Ports;
 
 namespace ptz_controller
 {
+
     public partial class Form1 : Form
     {
+        const string portname = "COM5";
+        const int baudrate = 57600;
 
         // Instantiate the communications
         // port with some basic settings
         SerialPort port = new SerialPort(
-          "COM5", 57600);
+          portname, baudrate);
         int _totalDelta = 0;
         int _scaledDelta = 0;
         int oldxvalue = 0;
@@ -59,7 +62,7 @@ namespace ptz_controller
         int differencey = 0;
         int newyvalue = 0;
         int oldyvalue = 0;
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -75,11 +78,11 @@ namespace ptz_controller
             _scaledDelta = e.Delta / 120;
             TotalDeltaLabel.Text = _scaledDelta.ToString();
             if (_scaledDelta>0)
-                    { port.Write("t");
+                    { port.Write("t\n");
             }
             if (_scaledDelta < 0)
             {
-                port.Write("g");
+                port.Write("g\n");
             }
 
             Flush_Reads();
@@ -124,6 +127,7 @@ namespace ptz_controller
 
             // Open the port for communications
             port.Open();
+            portinfo.Text = portname +" "+ baudrate.ToString();
             port.DiscardInBuffer();
             port.DiscardOutBuffer();
             port.DtrEnable = true;
@@ -135,13 +139,13 @@ namespace ptz_controller
         {
             // Write a string
             //not working sn
-            port.Write("q");
+            port.Write("q\n");
             Flush_Reads();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            port.Write("e");
+            port.Write("e\n");
             Flush_Reads();
         }
 
@@ -149,6 +153,7 @@ namespace ptz_controller
         {
             // Close the port
             port.Close();
+            portinfo.Text = "port closed";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -158,13 +163,13 @@ namespace ptz_controller
 
         private void Up_Click(object sender, EventArgs e)
         {
-            port.Write("w");
+            port.Write("s\n");
             Flush_Reads();
         }
 
         private void down_Click(object sender, EventArgs e)
         {
-            port.Write("s");
+            port.Write("w\n");
             Flush_Reads();
         }
 
@@ -196,20 +201,20 @@ namespace ptz_controller
 
                 if (differencex > 0)
                 {
-                    port.Write("a");
+                    port.Write("a\n");
                 }
                 if (differencex < 0)
                 {
-                    port.Write("d");
+                    port.Write("d\n");
                 }
 
                 if (differencey > 0)
                 {
-                    port.Write("w");
+                    port.Write("w\n");
                 }
                 if (differencey < 0)
                 {
-                    port.Write("s");
+                    port.Write("s\n");
                 }
                 x_position.Text = newxvalue.ToString();
                 Flush_Reads();
@@ -255,6 +260,23 @@ namespace ptz_controller
         private void store4_Click(object sender, EventArgs e)
         {
             fave4.Text = rcvbuf.Text;
+        }
+
+        private void portinfo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void motorPositions_Click(object sender, EventArgs e)
+        {
+            port.Write("get_motor_positions\n");
+            Flush_Reads(); //should rename this function later
+        }
+
+        private void setmotorpositions_Click(object sender, EventArgs e)
+        {
+            port.Write("set_motor_positions 117 45 107\n");
+            Flush_Reads(); //should rename this function later
         }
     }
 }
