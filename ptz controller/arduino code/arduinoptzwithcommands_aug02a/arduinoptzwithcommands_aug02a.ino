@@ -30,6 +30,9 @@
 //implemented commands (sender has to now send line feeds but has the advantage of sending full coordinates and reading info directly, single hot commands were too restrictive
 //for motor control commant  parser https://forum.arduino.cc/index.php?topic=548640.0 and more help on implementation here https://stackoverflow.com/questions/50967807/arduino-error-cannot-convert-string-to-char-for-argument-1-to-char-str
 
+// now that ive added preset positions the servers seem to never stop turning. this could be that I have not checked the limits and forced them to stay in a boundary (I think the sense r
+//resistor is not working at all there and causes the feedback circuit to go nuts so i will add a check limits routine to try and take care of this
+
 #include<Servo.h> // include server library
 Servo ser; // create servo object to control a servo
 Servo ser2; // create servo object to control a servo
@@ -113,6 +116,7 @@ void loop() {
         }
         else if(command.startsWith("set_motor_positions")){
     set_all_motor_positions();
+    send_motor_positions();//send back what was done
         }
         else{
             Serial.println("Invalid command");
@@ -122,36 +126,42 @@ void loop() {
 
 void left_rotate(){
       poser += 1; //than position of servo motor increases by 1 ( anti clockwise)
+      check_limits();
       ser.write(poser);// the servo will move according to position 
       delay(delayval);//delay for the servo to get to the position  
 }
 
 void right_rotate(){
       poser -= 1; //than position of servo motor decreases by 1 (clockwise)
+      check_limits();
       ser.write(poser);// the servo will move according to position 
       delay(delayval);//delay for the servo to get to the position
 }
 
 void up_elbow(){
       poser2 += 1; //than position of servo motor increases by 1 ( anti clockwise)
+      check_limits();
       ser2.write(poser2);// the servo will move according to position 
       delay(delayval2);//delay for the servo to get to the position  
 }
 
 void down_elbow(){
       poser2 -= 1; //than position of servo motor decreases by 1 (clockwise)
+      check_limits();
       ser2.write(poser2);// the servo will move according to position 
       delay(delayval2);//delay for the servo to get to the position  
 }
 
 void wrist_up(){
       poser3 += 1; //than position of servo motor increases by 1 ( anti clockwise)
+      check_limits();
       ser3.write(poser3);// the servo will move according to position 
       delay(delayval3);//delay for the servo to get to the position  
 }
 
 void wrist_down(){
       poser3 -= 1; //than position of servo motor decreases by 1 (clockwise)
+      check_limits();
       ser3.write(poser3);// the servo will move according to position 
       delay(delayval3);//delay for the servo to get to the position  
 }
@@ -172,6 +182,7 @@ void speed_move_horizontal(){
       poser=92;
       poser2=6;
       poser3=102;
+      check_limits();
       ser.write(poser);// the servo will move according to position
       ser2.write(poser2);// the servo will move according to position
       ser3.write(poser3);// the servo will move according to position
@@ -182,6 +193,7 @@ void speed_move_vertical(){
       poser=36;
       poser2=93;
       poser3=101;
+      check_limits();
       ser.write(poser);// the servo will move according to position
       ser2.write(poser2);// the servo will move according to position
       ser3.write(poser3);// the servo will move according to position
@@ -222,10 +234,37 @@ void set_all_motor_positions(){
       poser=mot1.toInt();
       poser2=mot2.toInt();
       poser3=mot3.toInt();
+
+      check_limits();
       ser.write(poser);// the servo will move according to position
       ser2.write(poser2);// the servo will move according to position
       ser3.write(poser3);// the servo will move according to position
       delay(delayvallong);//delay for the servo to get to the position 
         
-      // } 
-}
+       } 
+
+void check_limits(){
+       //left/right limits
+      if (poser>175){
+        poser=175;}
+        
+      if (poser<5){
+        poser=5;}
+
+        
+     //up down limits   
+      if (poser2>175){
+        poser2=175;}
+      if (poser2<5){
+        poser2=5;}
+
+
+       //wrist up down limits   
+      if (poser3>175){
+        poser3=175;}
+      if (poser3<5){
+        poser3=5;}
+  }
+  
+
+  

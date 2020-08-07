@@ -9,6 +9,9 @@ using System.Text;
 using System.Windows.Forms;
 
 using System.IO.Ports;
+using System.Reflection;
+using System.Threading.Tasks;
+using System.Threading;
 //using System.Reflection;
 //using System.Runtime.Serialization.Formatters;
 
@@ -40,7 +43,7 @@ using System.IO.Ports;
 //turns out decoupling was not strong enough. i added to both the power at each motor ribbon connect 100uF and 400Uf on one and also small cap on data line as it was noisy
 //reading data back from the serial can be tricky (I want to read the final positions from the arduino, this is a serial stream. I sdont need all the data just be able to read and maybe stor a position when learning a position
 //https://stackoverflow.com/questions/44378327/read-all-buffer-data-from-serial-port-with-c-sharp
-
+// for some reason my label is not clearing for motor position, I think I need to find the property for that it auto appends new lines sometimes. Maybe I have to clear then update
 
 namespace ptz_controller
 {
@@ -93,6 +96,9 @@ namespace ptz_controller
             //Required for getting data feedback from Arduino on servo present positions
             //this may get more sets of data than expected but the last data position will be caught
             //this can be used when learning favorite axis positions and setting as presets
+            
+            port.Write("get_motor_positions\n");
+
             int bytestoread = 0;
             try
             {
@@ -113,6 +119,7 @@ namespace ptz_controller
 
                     if (port.IsOpen)
                         port.Read(temp, 0, bytestoread);
+                    rcvbuf.Text = "";
 
                     rcvbuf.Text = (Encoding.Default.GetString(temp));
 
@@ -274,34 +281,40 @@ namespace ptz_controller
 
         private void motorPositions_Click(object sender, EventArgs e)
         {
+
             port.Write("get_motor_positions\n");
             Flush_Reads(); //should rename this function later
         }
 
         private void preset1_Click(object sender, EventArgs e)
         {
-            port.Write("set_motor_positions 117 45 107\n");
+            //#### very important set motor command needs a space at the end or last number isnt registered.
+            port.Write("set_motor_positions 36 93 101 \n");
             Flush_Reads(); //should rename this function later
         }
 
         private void preset2_Click(object sender, EventArgs e)
-        {
-            port.Write("set_motor_positions 117 45 107\n");
+        {//#### very important set motor command needs a space at the end or last number isnt registered.
+            port.Write("set_motor_positions 117 45 107 \n");
             Flush_Reads(); //should rename this function later
         }
 
         private void preset3_Click(object sender, EventArgs e)
-        {
-            port.Write("set_motor_positions 117 45 107\n");
+        {//#### very important set motor command needs a space at the end or last number isnt registered.
+            port.Write("set_motor_positions 38 35 6 \n");
             Flush_Reads(); //should rename this function later
         }
 
         private void preset4_Click(object sender, EventArgs e)
-        {
-            port.Write("set_motor_positions 117 45 107\n");
+        {//#### very important set motor command needs a space at the end or last number isnt registered.
+            port.Write("set_motor_positions 38 05 20 \n");
             Flush_Reads(); //should rename this function later
         }
-
+        private void preset5_Click(object sender, EventArgs e)
+        {//#### very important set motor command needs a space at the end or last number isnt registered.
+            port.Write("set_motor_positions 38 05 77 \n");
+            Flush_Reads(); //should rename this function later
+        }
         private void upfaster_Click(object sender, EventArgs e)
         {
             port.Write("s\n");
@@ -419,5 +432,51 @@ namespace ptz_controller
             port.Write("g\n");
             Flush_Reads();
         }
+
+        private void playseq1_Click(object sender, EventArgs e)
+        {
+            // sequencing my presets got lazy called the events from this event
+            //needs time delay
+            //https://www.codeproject.com/Questions/738249/How-to-call-one-event-inside-another-event-in-Csha
+            preset1_Click(sender, e);
+            sequence_delay();
+            preset2_Click(sender, e);
+            sequence_delay();
+            preset3_Click(sender, e);
+            sequence_delay();
+
+            shake_end();
+
+            preset1_Click(sender, e);
+            sequence_delay_short();
+
+
+
+        }
+        private void sequence_delay()
+        {
+            int milliseconds =2000;
+            Thread.Sleep(milliseconds);
+            Console.WriteLine("delay");
+        }
+        private void sequence_delay_short()
+        {
+            int milliseconds = 500;
+            Thread.Sleep(milliseconds);
+            Console.WriteLine("delay");
+        }
+        private void shake_end()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                port.Write("set_motor_positions 38 35 6 \n");
+                Flush_Reads(); //should rename this function later
+                sequence_delay_short();
+                port.Write("set_motor_positions 38 35 66 \n");
+                sequence_delay_short();
+            }
+        }
+
+
     }
 }
