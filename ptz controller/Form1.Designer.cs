@@ -72,6 +72,7 @@
             this.wristdown = new System.Windows.Forms.Button();
             this.wristup = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.preset5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -144,9 +145,9 @@
             this.rcvbuf.AutoSize = true;
             this.rcvbuf.Location = new System.Drawing.Point(196, 59);
             this.rcvbuf.Name = "rcvbuf";
-            this.rcvbuf.Size = new System.Drawing.Size(48, 20);
+            this.rcvbuf.Size = new System.Drawing.Size(110, 20);
             this.rcvbuf.TabIndex = 9;
-            this.rcvbuf.Text = "0 0 0 ";
+            this.rcvbuf.Text = "Motor Position";
             this.rcvbuf.Click += new System.EventHandler(this.rcvbuf_Click);
             // 
             // x_position
@@ -291,6 +292,7 @@
             this.playseq1.TabIndex = 26;
             this.playseq1.Text = "play sequence1";
             this.playseq1.UseVisualStyleBackColor = true;
+            this.playseq1.Click += new System.EventHandler(this.playseq1_Click);
             // 
             // button1
             // 
@@ -361,19 +363,19 @@
             // 
             // preset1
             // 
-            this.preset1.Location = new System.Drawing.Point(268, 25);
+            this.preset1.Location = new System.Drawing.Point(268, 30);
             this.preset1.Name = "preset1";
-            this.preset1.Size = new System.Drawing.Size(154, 36);
+            this.preset1.Size = new System.Drawing.Size(105, 31);
             this.preset1.TabIndex = 29;
-            this.preset1.Text = "preset1";
+            this.preset1.Text = "zero pos";
             this.preset1.UseVisualStyleBackColor = true;
             this.preset1.Click += new System.EventHandler(this.preset1_Click);
             // 
             // preset2
             // 
-            this.preset2.Location = new System.Drawing.Point(268, 66);
+            this.preset2.Location = new System.Drawing.Point(268, 71);
             this.preset2.Name = "preset2";
-            this.preset2.Size = new System.Drawing.Size(154, 36);
+            this.preset2.Size = new System.Drawing.Size(105, 31);
             this.preset2.TabIndex = 30;
             this.preset2.Text = "preset2";
             this.preset2.UseVisualStyleBackColor = true;
@@ -381,9 +383,9 @@
             // 
             // preset4
             // 
-            this.preset4.Location = new System.Drawing.Point(268, 150);
+            this.preset4.Location = new System.Drawing.Point(268, 155);
             this.preset4.Name = "preset4";
-            this.preset4.Size = new System.Drawing.Size(154, 36);
+            this.preset4.Size = new System.Drawing.Size(105, 31);
             this.preset4.TabIndex = 32;
             this.preset4.Text = "preset4";
             this.preset4.UseVisualStyleBackColor = true;
@@ -391,9 +393,9 @@
             // 
             // preset3
             // 
-            this.preset3.Location = new System.Drawing.Point(268, 108);
+            this.preset3.Location = new System.Drawing.Point(268, 113);
             this.preset3.Name = "preset3";
-            this.preset3.Size = new System.Drawing.Size(154, 36);
+            this.preset3.Size = new System.Drawing.Size(105, 31);
             this.preset3.TabIndex = 31;
             this.preset3.Text = "preset3";
             this.preset3.UseVisualStyleBackColor = true;
@@ -402,6 +404,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox3.Controls.Add(this.preset5);
             this.groupBox3.Controls.Add(this.preset4);
             this.groupBox3.Controls.Add(this.preset3);
             this.groupBox3.Controls.Add(this.preset2);
@@ -494,9 +497,9 @@
             // 
             // wristdownfaster
             // 
-            this.wristdownfaster.Location = new System.Drawing.Point(41, 232);
+            this.wristdownfaster.Location = new System.Drawing.Point(11, 232);
             this.wristdownfaster.Name = "wristdownfaster";
-            this.wristdownfaster.Size = new System.Drawing.Size(60, 55);
+            this.wristdownfaster.Size = new System.Drawing.Size(111, 55);
             this.wristdownfaster.TabIndex = 43;
             this.wristdownfaster.Text = "down faster";
             this.wristdownfaster.UseVisualStyleBackColor = true;
@@ -504,9 +507,9 @@
             // 
             // wristupfaster
             // 
-            this.wristupfaster.Location = new System.Drawing.Point(40, 47);
+            this.wristupfaster.Location = new System.Drawing.Point(11, 47);
             this.wristupfaster.Name = "wristupfaster";
-            this.wristupfaster.Size = new System.Drawing.Size(61, 55);
+            this.wristupfaster.Size = new System.Drawing.Size(111, 55);
             this.wristupfaster.TabIndex = 42;
             this.wristupfaster.Text = "up faster";
             this.wristupfaster.UseVisualStyleBackColor = true;
@@ -545,6 +548,16 @@
             this.groupBox5.TabIndex = 44;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "wrist";
+            // 
+            // preset5
+            // 
+            this.preset5.Location = new System.Drawing.Point(379, 30);
+            this.preset5.Name = "preset5";
+            this.preset5.Size = new System.Drawing.Size(105, 31);
+            this.preset5.TabIndex = 33;
+            this.preset5.Text = "preset5";
+            this.preset5.UseVisualStyleBackColor = true;
+            this.preset5.Click += new System.EventHandler(this.preset5_Click);
             // 
             // Form1
             // 
@@ -623,6 +636,7 @@
         private System.Windows.Forms.Button wristdown;
         private System.Windows.Forms.Button wristup;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button preset5;
     }
 }
 
