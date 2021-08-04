@@ -50,7 +50,7 @@ namespace ptz_controller
 
     public partial class Form1 : Form
     {
-        const string portname = "COM5";
+        const string portname = "COM4";
         const int baudrate = 57600;
 
         // Instantiate the communications
@@ -312,7 +312,8 @@ namespace ptz_controller
         }
         private void preset5_Click(object sender, EventArgs e)
         {//#### very important set motor command needs a space at the end or last number isnt registered.
-            port.Write("set_motor_positions 38 05 77 \n");
+         // port.Write("set_motor_positions 38 05 77 \n");
+            port.Write("set_motor_positions 140 93 26 \n");
             Flush_Reads(); //should rename this function later
         }
         private void upfaster_Click(object sender, EventArgs e)
@@ -355,7 +356,7 @@ namespace ptz_controller
 
         private void right_Click(object sender, EventArgs e)
         {
-            port.Write("a\n");
+            port.Write("d\n");
             Flush_Reads();
         }
 
@@ -477,6 +478,54 @@ namespace ptz_controller
             }
         }
 
+        private void right_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            port.Write("d\n");
+            Flush_Reads();
+        }
 
+        private void left_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            port.Write("a\n");
+            Flush_Reads();
+        }
+
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {// this section so I can dial positions with rotary encoder or arrow keys my encoder tool is set to send arrow key commands
+            //capture up arrow key
+            if (keyData == Keys.Up)
+            {
+                port.Write("t\n");
+                Flush_Reads();
+                //MessageBox.Show("You pressed Up arrow key");
+                return true;
+            }
+            //capture down arrow key
+            if (keyData == Keys.Down)
+            {
+                port.Write("g\n");
+                Flush_Reads();
+                //MessageBox.Show("You pressed Down arrow key");
+                return true;
+            }
+            //capture left arrow key
+            if (keyData == Keys.Left)
+            {
+                // MessageBox.Show("You pressed Left arrow key");
+                port.Write("a\n");
+                Flush_Reads();
+                return true;
+            }
+            //capture right arrow key
+            if (keyData == Keys.Right)
+            {
+                //MessageBox.Show("You pressed Right arrow key");
+                port.Write("d\n");
+                Flush_Reads();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }
