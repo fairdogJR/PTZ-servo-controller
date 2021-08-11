@@ -527,5 +527,63 @@ namespace ptz_controller
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
+
+        private void label1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            //the ardu=ino code need a set value for a single axis, just usi ng this to test range and forcing other limbs
+
+            string valnew= trackBar1.Value.ToString();
+            label1.Text = valnew;
+            string positiontext = "set_motor_positions 36 " + valnew + " 93 101 \n";
+            port.Write(positiontext);
+            Flush_Reads(); //should rename this function later
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
+        private void recall1_Click(object sender, EventArgs e)
+        {
+            string valnew = fave1.Text;
+            string positiontext = "set_motor_positions "+ valnew + " \n";
+            port.Write(positiontext);
+            Flush_Reads(); //should rename this function later
+        }
+
+        private void recall2_Click(object sender, EventArgs e)
+        {
+            string valnew = fave2.Text;
+            string positiontext = "set_motor_positions " + valnew + " \n";
+            port.Write(positiontext);
+            Flush_Reads(); //should rename this function later
+        }
+
+        private void recall3_Click(object sender, EventArgs e)
+        {
+            string valnew = fave3.Text;
+            string positiontext = "set_motor_positions " + valnew + " \n";
+            port.Write(positiontext);
+            Flush_Reads(); //should rename this function later
+        }
+
+        private void recall4_Click(object sender, EventArgs e)
+        {
+            string valnew = fave4.Text;
+            string positiontext = "set_motor_positions " + valnew + " \n";
+            port.Write(positiontext);
+            Flush_Reads(); //should rename this function later
+        }
     }
 }

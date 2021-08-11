@@ -73,19 +73,35 @@
             this.wristdown = new System.Windows.Forms.Button();
             this.wristup = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(366, 30);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Location = new System.Drawing.Point(549, 46);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(73, 29);
+            this.button3.Size = new System.Drawing.Size(110, 45);
             this.button3.TabIndex = 2;
             this.button3.Text = "rotate left";
             this.button3.UseVisualStyleBackColor = true;
@@ -93,10 +109,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(443, 30);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Location = new System.Drawing.Point(664, 46);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 29);
+            this.button4.Size = new System.Drawing.Size(112, 45);
             this.button4.TabIndex = 3;
             this.button4.Text = "rotate right";
             this.button4.UseVisualStyleBackColor = true;
@@ -106,10 +121,9 @@
             // DeltaLabel
             // 
             this.DeltaLabel.AutoSize = true;
-            this.DeltaLabel.Location = new System.Drawing.Point(611, 163);
-            this.DeltaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DeltaLabel.Location = new System.Drawing.Point(916, 251);
             this.DeltaLabel.Name = "DeltaLabel";
-            this.DeltaLabel.Size = new System.Drawing.Size(58, 13);
+            this.DeltaLabel.Size = new System.Drawing.Size(86, 20);
             this.DeltaLabel.TabIndex = 5;
             this.DeltaLabel.Text = "DeltaLabel";
             this.DeltaLabel.Click += new System.EventHandler(this.label1_Click);
@@ -117,19 +131,17 @@
             // TotalDeltaLabel
             // 
             this.TotalDeltaLabel.AutoSize = true;
-            this.TotalDeltaLabel.Location = new System.Drawing.Point(611, 182);
-            this.TotalDeltaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TotalDeltaLabel.Location = new System.Drawing.Point(916, 280);
             this.TotalDeltaLabel.Name = "TotalDeltaLabel";
-            this.TotalDeltaLabel.Size = new System.Drawing.Size(82, 13);
+            this.TotalDeltaLabel.Size = new System.Drawing.Size(121, 20);
             this.TotalDeltaLabel.TabIndex = 6;
             this.TotalDeltaLabel.Text = "TotalDeltaLabel";
             // 
             // Up
             // 
-            this.Up.Location = new System.Drawing.Point(129, 48);
-            this.Up.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Up.Location = new System.Drawing.Point(194, 74);
             this.Up.Name = "Up";
-            this.Up.Size = new System.Drawing.Size(75, 29);
+            this.Up.Size = new System.Drawing.Size(112, 45);
             this.Up.TabIndex = 7;
             this.Up.Text = "up";
             this.Up.UseVisualStyleBackColor = true;
@@ -137,10 +149,9 @@
             // 
             // down
             // 
-            this.down.Location = new System.Drawing.Point(129, 156);
-            this.down.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.down.Location = new System.Drawing.Point(194, 240);
             this.down.Name = "down";
-            this.down.Size = new System.Drawing.Size(74, 32);
+            this.down.Size = new System.Drawing.Size(111, 49);
             this.down.TabIndex = 8;
             this.down.Text = "down";
             this.down.UseVisualStyleBackColor = true;
@@ -149,10 +160,9 @@
             // rcvbuf
             // 
             this.rcvbuf.AutoSize = true;
-            this.rcvbuf.Location = new System.Drawing.Point(131, 38);
-            this.rcvbuf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.rcvbuf.Location = new System.Drawing.Point(196, 58);
             this.rcvbuf.Name = "rcvbuf";
-            this.rcvbuf.Size = new System.Drawing.Size(74, 13);
+            this.rcvbuf.Size = new System.Drawing.Size(110, 20);
             this.rcvbuf.TabIndex = 9;
             this.rcvbuf.Text = "Motor Position";
             this.rcvbuf.Click += new System.EventHandler(this.rcvbuf_Click);
@@ -160,20 +170,18 @@
             // x_position
             // 
             this.x_position.AutoSize = true;
-            this.x_position.Location = new System.Drawing.Point(615, 213);
-            this.x_position.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.x_position.Location = new System.Drawing.Point(922, 328);
             this.x_position.Name = "x_position";
-            this.x_position.Size = new System.Drawing.Size(54, 13);
+            this.x_position.Size = new System.Drawing.Size(80, 20);
             this.x_position.TabIndex = 10;
             this.x_position.Text = "x_position";
             this.x_position.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // store1
             // 
-            this.store1.Location = new System.Drawing.Point(37, 64);
-            this.store1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.store1.Location = new System.Drawing.Point(56, 98);
             this.store1.Name = "store1";
-            this.store1.Size = new System.Drawing.Size(49, 25);
+            this.store1.Size = new System.Drawing.Size(74, 38);
             this.store1.TabIndex = 11;
             this.store1.Text = "store1";
             this.store1.UseVisualStyleBackColor = true;
@@ -181,10 +189,9 @@
             // 
             // store2
             // 
-            this.store2.Location = new System.Drawing.Point(37, 93);
-            this.store2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.store2.Location = new System.Drawing.Point(56, 143);
             this.store2.Name = "store2";
-            this.store2.Size = new System.Drawing.Size(49, 25);
+            this.store2.Size = new System.Drawing.Size(74, 38);
             this.store2.TabIndex = 13;
             this.store2.Text = "store2";
             this.store2.UseVisualStyleBackColor = true;
@@ -192,10 +199,9 @@
             // 
             // store3
             // 
-            this.store3.Location = new System.Drawing.Point(37, 122);
-            this.store3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.store3.Location = new System.Drawing.Point(56, 188);
             this.store3.Name = "store3";
-            this.store3.Size = new System.Drawing.Size(49, 25);
+            this.store3.Size = new System.Drawing.Size(74, 38);
             this.store3.TabIndex = 14;
             this.store3.Text = "store3";
             this.store3.UseVisualStyleBackColor = true;
@@ -203,10 +209,9 @@
             // 
             // store4
             // 
-            this.store4.Location = new System.Drawing.Point(37, 150);
-            this.store4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.store4.Location = new System.Drawing.Point(56, 231);
             this.store4.Name = "store4";
-            this.store4.Size = new System.Drawing.Size(49, 25);
+            this.store4.Size = new System.Drawing.Size(74, 38);
             this.store4.TabIndex = 15;
             this.store4.Text = "store4";
             this.store4.UseVisualStyleBackColor = true;
@@ -214,51 +219,50 @@
             // 
             // recall4
             // 
-            this.recall4.Location = new System.Drawing.Point(170, 150);
-            this.recall4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.recall4.Location = new System.Drawing.Point(255, 231);
             this.recall4.Name = "recall4";
-            this.recall4.Size = new System.Drawing.Size(49, 25);
+            this.recall4.Size = new System.Drawing.Size(74, 38);
             this.recall4.TabIndex = 19;
             this.recall4.Text = "recall4";
             this.recall4.UseVisualStyleBackColor = true;
+            this.recall4.Click += new System.EventHandler(this.recall4_Click);
             // 
             // recall3
             // 
-            this.recall3.Location = new System.Drawing.Point(170, 122);
-            this.recall3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.recall3.Location = new System.Drawing.Point(255, 188);
             this.recall3.Name = "recall3";
-            this.recall3.Size = new System.Drawing.Size(49, 25);
+            this.recall3.Size = new System.Drawing.Size(74, 38);
             this.recall3.TabIndex = 18;
             this.recall3.Text = "recall3";
             this.recall3.UseVisualStyleBackColor = true;
+            this.recall3.Click += new System.EventHandler(this.recall3_Click);
             // 
             // recall2
             // 
-            this.recall2.Location = new System.Drawing.Point(170, 93);
-            this.recall2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.recall2.Location = new System.Drawing.Point(255, 143);
             this.recall2.Name = "recall2";
-            this.recall2.Size = new System.Drawing.Size(49, 25);
+            this.recall2.Size = new System.Drawing.Size(74, 38);
             this.recall2.TabIndex = 17;
             this.recall2.Text = "recall2";
             this.recall2.UseVisualStyleBackColor = true;
+            this.recall2.Click += new System.EventHandler(this.recall2_Click);
             // 
             // recall1
             // 
-            this.recall1.Location = new System.Drawing.Point(170, 64);
-            this.recall1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.recall1.Location = new System.Drawing.Point(255, 98);
             this.recall1.Name = "recall1";
-            this.recall1.Size = new System.Drawing.Size(49, 25);
+            this.recall1.Size = new System.Drawing.Size(74, 38);
             this.recall1.TabIndex = 16;
             this.recall1.Text = "recall1";
             this.recall1.UseVisualStyleBackColor = true;
+            this.recall1.Click += new System.EventHandler(this.recall1_Click);
             // 
             // fave1
             // 
             this.fave1.AutoSize = true;
-            this.fave1.Location = new System.Drawing.Point(109, 70);
-            this.fave1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fave1.Location = new System.Drawing.Point(164, 108);
             this.fave1.Name = "fave1";
-            this.fave1.Size = new System.Drawing.Size(31, 13);
+            this.fave1.Size = new System.Drawing.Size(44, 20);
             this.fave1.TabIndex = 20;
             this.fave1.Text = "0 0 0";
             this.fave1.Click += new System.EventHandler(this.fave1_Click_2);
@@ -266,10 +270,9 @@
             // fave2
             // 
             this.fave2.AutoSize = true;
-            this.fave2.Location = new System.Drawing.Point(109, 99);
-            this.fave2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fave2.Location = new System.Drawing.Point(164, 152);
             this.fave2.Name = "fave2";
-            this.fave2.Size = new System.Drawing.Size(31, 13);
+            this.fave2.Size = new System.Drawing.Size(44, 20);
             this.fave2.TabIndex = 21;
             this.fave2.Text = "0 0 0";
             this.fave2.Click += new System.EventHandler(this.fave2_Click);
@@ -277,29 +280,26 @@
             // fave3
             // 
             this.fave3.AutoSize = true;
-            this.fave3.Location = new System.Drawing.Point(109, 127);
-            this.fave3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fave3.Location = new System.Drawing.Point(164, 195);
             this.fave3.Name = "fave3";
-            this.fave3.Size = new System.Drawing.Size(31, 13);
+            this.fave3.Size = new System.Drawing.Size(44, 20);
             this.fave3.TabIndex = 22;
             this.fave3.Text = "0 0 0";
             // 
             // fave4
             // 
             this.fave4.AutoSize = true;
-            this.fave4.Location = new System.Drawing.Point(109, 156);
-            this.fave4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fave4.Location = new System.Drawing.Point(164, 240);
             this.fave4.Name = "fave4";
-            this.fave4.Size = new System.Drawing.Size(31, 13);
+            this.fave4.Size = new System.Drawing.Size(44, 20);
             this.fave4.TabIndex = 23;
             this.fave4.Text = "0 0 0";
             // 
             // motorPositions
             // 
-            this.motorPositions.Location = new System.Drawing.Point(13, 25);
-            this.motorPositions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.motorPositions.Location = new System.Drawing.Point(20, 38);
             this.motorPositions.Name = "motorPositions";
-            this.motorPositions.Size = new System.Drawing.Size(101, 27);
+            this.motorPositions.Size = new System.Drawing.Size(152, 42);
             this.motorPositions.TabIndex = 25;
             this.motorPositions.Text = "motor positions";
             this.motorPositions.UseVisualStyleBackColor = true;
@@ -307,10 +307,9 @@
             // 
             // playseq1
             // 
-            this.playseq1.Location = new System.Drawing.Point(702, 356);
-            this.playseq1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.playseq1.Location = new System.Drawing.Point(1053, 548);
             this.playseq1.Name = "playseq1";
-            this.playseq1.Size = new System.Drawing.Size(75, 39);
+            this.playseq1.Size = new System.Drawing.Size(112, 60);
             this.playseq1.TabIndex = 26;
             this.playseq1.Text = "play sequence1";
             this.playseq1.UseVisualStyleBackColor = true;
@@ -318,10 +317,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(14, 25);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(21, 38);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 40);
+            this.button1.Size = new System.Drawing.Size(150, 62);
             this.button1.TabIndex = 0;
             this.button1.Text = "open port";
             this.button1.UseVisualStyleBackColor = true;
@@ -329,10 +327,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(14, 86);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(21, 132);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 33);
+            this.button2.Size = new System.Drawing.Size(150, 51);
             this.button2.TabIndex = 1;
             this.button2.Text = "close port";
             this.button2.UseVisualStyleBackColor = true;
@@ -341,10 +338,9 @@
             // portinfo
             // 
             this.portinfo.AutoSize = true;
-            this.portinfo.Location = new System.Drawing.Point(131, 38);
-            this.portinfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.portinfo.Location = new System.Drawing.Point(196, 58);
             this.portinfo.Name = "portinfo";
-            this.portinfo.Size = new System.Drawing.Size(60, 13);
+            this.portinfo.Size = new System.Drawing.Size(88, 20);
             this.portinfo.TabIndex = 24;
             this.portinfo.Text = "Port closed";
             this.portinfo.Click += new System.EventHandler(this.portinfo_Click);
@@ -355,11 +351,9 @@
             this.groupBox1.Controls.Add(this.portinfo);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(702, 8);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(1053, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(233, 133);
+            this.groupBox1.Size = new System.Drawing.Size(350, 205);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "connection";
@@ -381,21 +375,18 @@
             this.groupBox2.Controls.Add(this.store2);
             this.groupBox2.Controls.Add(this.store1);
             this.groupBox2.Controls.Add(this.rcvbuf);
-            this.groupBox2.Location = new System.Drawing.Point(702, 147);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(1053, 226);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(232, 190);
+            this.groupBox2.Size = new System.Drawing.Size(348, 292);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Positions";
+            this.groupBox2.Text = "Positions simple sequence";
             // 
             // preset1
             // 
-            this.preset1.Location = new System.Drawing.Point(179, 19);
-            this.preset1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.preset1.Location = new System.Drawing.Point(268, 29);
             this.preset1.Name = "preset1";
-            this.preset1.Size = new System.Drawing.Size(70, 20);
+            this.preset1.Size = new System.Drawing.Size(105, 31);
             this.preset1.TabIndex = 29;
             this.preset1.Text = "zero pos";
             this.preset1.UseVisualStyleBackColor = true;
@@ -403,10 +394,9 @@
             // 
             // preset2
             // 
-            this.preset2.Location = new System.Drawing.Point(179, 46);
-            this.preset2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.preset2.Location = new System.Drawing.Point(268, 71);
             this.preset2.Name = "preset2";
-            this.preset2.Size = new System.Drawing.Size(70, 20);
+            this.preset2.Size = new System.Drawing.Size(105, 31);
             this.preset2.TabIndex = 30;
             this.preset2.Text = "preset2";
             this.preset2.UseVisualStyleBackColor = true;
@@ -414,10 +404,9 @@
             // 
             // preset4
             // 
-            this.preset4.Location = new System.Drawing.Point(179, 101);
-            this.preset4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.preset4.Location = new System.Drawing.Point(268, 155);
             this.preset4.Name = "preset4";
-            this.preset4.Size = new System.Drawing.Size(70, 20);
+            this.preset4.Size = new System.Drawing.Size(105, 31);
             this.preset4.TabIndex = 32;
             this.preset4.Text = "preset4";
             this.preset4.UseVisualStyleBackColor = true;
@@ -425,10 +414,9 @@
             // 
             // preset3
             // 
-            this.preset3.Location = new System.Drawing.Point(179, 73);
-            this.preset3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.preset3.Location = new System.Drawing.Point(268, 112);
             this.preset3.Name = "preset3";
-            this.preset3.Size = new System.Drawing.Size(70, 20);
+            this.preset3.Size = new System.Drawing.Size(105, 31);
             this.preset3.TabIndex = 31;
             this.preset3.Text = "preset3";
             this.preset3.UseVisualStyleBackColor = true;
@@ -443,21 +431,18 @@
             this.groupBox3.Controls.Add(this.preset2);
             this.groupBox3.Controls.Add(this.preset1);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox3.Location = new System.Drawing.Point(360, 8);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Location = new System.Drawing.Point(540, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox3.Size = new System.Drawing.Size(327, 133);
+            this.groupBox3.Size = new System.Drawing.Size(490, 205);
             this.groupBox3.TabIndex = 33;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Motor Positions";
             // 
             // preset5
             // 
-            this.preset5.Location = new System.Drawing.Point(253, 19);
-            this.preset5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.preset5.Location = new System.Drawing.Point(380, 29);
             this.preset5.Name = "preset5";
-            this.preset5.Size = new System.Drawing.Size(70, 20);
+            this.preset5.Size = new System.Drawing.Size(105, 31);
             this.preset5.TabIndex = 33;
             this.preset5.Text = "preset5";
             this.preset5.UseVisualStyleBackColor = true;
@@ -465,10 +450,9 @@
             // 
             // upfaster
             // 
-            this.upfaster.Location = new System.Drawing.Point(149, 8);
-            this.upfaster.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.upfaster.Location = new System.Drawing.Point(224, 12);
             this.upfaster.Name = "upfaster";
-            this.upfaster.Size = new System.Drawing.Size(41, 36);
+            this.upfaster.Size = new System.Drawing.Size(62, 55);
             this.upfaster.TabIndex = 34;
             this.upfaster.Text = "up faster";
             this.upfaster.UseVisualStyleBackColor = true;
@@ -476,10 +460,9 @@
             // 
             // downfaster
             // 
-            this.downfaster.Location = new System.Drawing.Point(149, 192);
-            this.downfaster.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.downfaster.Location = new System.Drawing.Point(224, 295);
             this.downfaster.Name = "downfaster";
-            this.downfaster.Size = new System.Drawing.Size(40, 36);
+            this.downfaster.Size = new System.Drawing.Size(60, 55);
             this.downfaster.TabIndex = 35;
             this.downfaster.Text = "down faster";
             this.downfaster.UseVisualStyleBackColor = true;
@@ -487,10 +470,9 @@
             // 
             // rightfaster
             // 
-            this.rightfaster.Location = new System.Drawing.Point(284, 97);
-            this.rightfaster.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rightfaster.Location = new System.Drawing.Point(426, 149);
             this.rightfaster.Name = "rightfaster";
-            this.rightfaster.Size = new System.Drawing.Size(40, 36);
+            this.rightfaster.Size = new System.Drawing.Size(60, 55);
             this.rightfaster.TabIndex = 39;
             this.rightfaster.Text = "right faster";
             this.rightfaster.UseVisualStyleBackColor = true;
@@ -498,10 +480,9 @@
             // 
             // leftfaster
             // 
-            this.leftfaster.Location = new System.Drawing.Point(6, 97);
-            this.leftfaster.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.leftfaster.Location = new System.Drawing.Point(9, 149);
             this.leftfaster.Name = "leftfaster";
-            this.leftfaster.Size = new System.Drawing.Size(41, 36);
+            this.leftfaster.Size = new System.Drawing.Size(62, 55);
             this.leftfaster.TabIndex = 38;
             this.leftfaster.Text = "left faster";
             this.leftfaster.UseVisualStyleBackColor = true;
@@ -509,10 +490,9 @@
             // 
             // right
             // 
-            this.right.Location = new System.Drawing.Point(206, 99);
-            this.right.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.right.Location = new System.Drawing.Point(309, 152);
             this.right.Name = "right";
-            this.right.Size = new System.Drawing.Size(74, 32);
+            this.right.Size = new System.Drawing.Size(111, 49);
             this.right.TabIndex = 37;
             this.right.Text = "right";
             this.right.UseVisualStyleBackColor = true;
@@ -520,10 +500,9 @@
             // 
             // left
             // 
-            this.left.Location = new System.Drawing.Point(51, 99);
-            this.left.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.left.Location = new System.Drawing.Point(76, 152);
             this.left.Name = "left";
-            this.left.Size = new System.Drawing.Size(75, 29);
+            this.left.Size = new System.Drawing.Size(112, 45);
             this.left.TabIndex = 36;
             this.left.Text = "left";
             this.left.UseVisualStyleBackColor = true;
@@ -541,21 +520,18 @@
             this.groupBox4.Controls.Add(this.upfaster);
             this.groupBox4.Controls.Add(this.down);
             this.groupBox4.Controls.Add(this.Up);
-            this.groupBox4.Location = new System.Drawing.Point(131, 163);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Location = new System.Drawing.Point(30, 95);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox4.Size = new System.Drawing.Size(328, 232);
+            this.groupBox4.Size = new System.Drawing.Size(492, 357);
             this.groupBox4.TabIndex = 40;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "arm";
             // 
             // wristdownfaster
             // 
-            this.wristdownfaster.Location = new System.Drawing.Point(7, 151);
-            this.wristdownfaster.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wristdownfaster.Location = new System.Drawing.Point(10, 232);
             this.wristdownfaster.Name = "wristdownfaster";
-            this.wristdownfaster.Size = new System.Drawing.Size(74, 36);
+            this.wristdownfaster.Size = new System.Drawing.Size(111, 55);
             this.wristdownfaster.TabIndex = 43;
             this.wristdownfaster.Text = "down faster";
             this.wristdownfaster.UseVisualStyleBackColor = true;
@@ -563,10 +539,9 @@
             // 
             // wristupfaster
             // 
-            this.wristupfaster.Location = new System.Drawing.Point(7, 31);
-            this.wristupfaster.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wristupfaster.Location = new System.Drawing.Point(10, 48);
             this.wristupfaster.Name = "wristupfaster";
-            this.wristupfaster.Size = new System.Drawing.Size(74, 36);
+            this.wristupfaster.Size = new System.Drawing.Size(111, 55);
             this.wristupfaster.TabIndex = 42;
             this.wristupfaster.Text = "up faster";
             this.wristupfaster.UseVisualStyleBackColor = true;
@@ -574,10 +549,9 @@
             // 
             // wristdown
             // 
-            this.wristdown.Location = new System.Drawing.Point(7, 115);
-            this.wristdown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wristdown.Location = new System.Drawing.Point(10, 177);
             this.wristdown.Name = "wristdown";
-            this.wristdown.Size = new System.Drawing.Size(74, 32);
+            this.wristdown.Size = new System.Drawing.Size(111, 49);
             this.wristdown.TabIndex = 41;
             this.wristdown.Text = "down";
             this.wristdown.UseVisualStyleBackColor = true;
@@ -585,10 +559,9 @@
             // 
             // wristup
             // 
-            this.wristup.Location = new System.Drawing.Point(7, 70);
-            this.wristup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.wristup.Location = new System.Drawing.Point(10, 108);
             this.wristup.Name = "wristup";
-            this.wristup.Size = new System.Drawing.Size(75, 29);
+            this.wristup.Size = new System.Drawing.Size(112, 45);
             this.wristup.TabIndex = 40;
             this.wristup.Text = "up";
             this.wristup.UseVisualStyleBackColor = true;
@@ -601,20 +574,122 @@
             this.groupBox5.Controls.Add(this.wristupfaster);
             this.groupBox5.Controls.Add(this.wristdown);
             this.groupBox5.Controls.Add(this.wristup);
-            this.groupBox5.Location = new System.Drawing.Point(468, 172);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Location = new System.Drawing.Point(702, 265);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox5.Size = new System.Drawing.Size(98, 193);
+            this.groupBox5.Size = new System.Drawing.Size(147, 297);
             this.groupBox5.TabIndex = 44;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "wrist";
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(37, 25);
+            this.trackBar1.Maximum = 150;
+            this.trackBar1.Minimum = 25;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(486, 69);
+            this.trackBar1.TabIndex = 45;
+            this.trackBar1.Value = 25;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(529, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 20);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "position";
+            this.label1.Click += new System.EventHandler(this.label1_Click_2);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.trackBar1);
+            this.groupBox6.Controls.Add(this.label1);
+            this.groupBox6.Location = new System.Drawing.Point(6, 124);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(640, 93);
+            this.groupBox6.TabIndex = 48;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Elbow Elevation";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.trackBar2);
+            this.groupBox7.Controls.Add(this.label4);
+            this.groupBox7.Location = new System.Drawing.Point(6, 223);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(640, 93);
+            this.groupBox7.TabIndex = 49;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Wrist Bend";
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(37, 25);
+            this.trackBar2.Maximum = 180;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(486, 69);
+            this.trackBar2.TabIndex = 45;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(529, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 20);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "position";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.trackBar3);
+            this.groupBox8.Controls.Add(this.label2);
+            this.groupBox8.Location = new System.Drawing.Point(6, 25);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(640, 93);
+            this.groupBox8.TabIndex = 49;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Base Rotation";
+            // 
+            // trackBar3
+            // 
+            this.trackBar3.Location = new System.Drawing.Point(37, 25);
+            this.trackBar3.Maximum = 150;
+            this.trackBar3.Minimum = 25;
+            this.trackBar3.Name = "trackBar3";
+            this.trackBar3.Size = new System.Drawing.Size(486, 69);
+            this.trackBar3.TabIndex = 45;
+            this.trackBar3.Value = 25;
+            this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(529, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "position";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.groupBox8);
+            this.groupBox9.Controls.Add(this.groupBox6);
+            this.groupBox9.Controls.Add(this.groupBox7);
+            this.groupBox9.Location = new System.Drawing.Point(30, 497);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(666, 334);
+            this.groupBox9.TabIndex = 50;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "slide control";
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 495);
+            this.ClientSize = new System.Drawing.Size(1428, 920);
+            this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
@@ -626,11 +701,9 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-      //      this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -639,6 +712,16 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
+            this.groupBox9.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -690,6 +773,16 @@
         private System.Windows.Forms.Button wristup;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button preset5;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TrackBar trackBar3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox9;
     }
 }
 
